@@ -171,7 +171,7 @@ table(p.adjust(P0,"BH")<0.1,p.adjust(P,"BH")<0.01) #Table 8
 #download a file to the current directory from GSE147507 
 x <- read.csv("GSE147507_RawReadCounts_Human.tsv.gz",sep="\t",comment.char="!")
 
-load("Z2") #x_{ijkm} in eq. (15)
+load("Z") #x_{ijkm} in eq. (15)
 Z <- apply(Z,2:4,scale) #standardize x_{ijkm} 
 require(rTensor)
 HOSVD <- hosvd(as.tensor(Z),c(10,5,2,3)) #apply HOSVD as in eq. (15)
