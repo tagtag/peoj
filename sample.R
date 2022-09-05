@@ -41,9 +41,9 @@ qqplot(P,P1,pch=16,cex=0.5,xlab="TD",ylab="projection");abline(0,1,col=2)
 dev.off()
 table(p.adjust(P,"BH")<0.01,p.adjust(P1,"BH")<0.01) #Table 2
 
-FALSE TRUE
-FALSE   812    2
-TRUE      0   11
+#       FALSE TRUE
+#FALSE   812    2
+#TRUE      0   11
 
 #shffuled set 
 U_all <- NULL
@@ -75,9 +75,9 @@ hist(1-P0,breaks=100,xlab="1-P",main="")
 dev.off()
 P <- pchisq(scale(SVD$u[,2])^2,1,lower.tail=F)
 table(p.adjust(P0,"BH")<0.1,(p.adjust(P,"BH")<0.01)[order(-SUM)<=500]) #Table 6 
-FALSE TRUE
-FALSE   488    0
-TRUE      1   11
+#       FALSE TRUE
+#FALSE   488    0
+#TRUE      1   11
 
 SUM <- apply(abs(x[,index][,-1]),1,sum)
 RANK <- rank(-(scale(c(SVD$v[rank(-SUM)<=3000,2],unlist(V_all))))^2)[1:length(SVD$v[rank(-SUM)<=3000,2])] #for  top expressed 3000
@@ -91,9 +91,9 @@ dev.off()
 
 P <- pchisq(scale(SVD$v[,2])^2,1,lower.tail=F)
 table(p.adjust(P0,"BH")<0.1,(p.adjust(P,"BH")<0.01)[rank(-SUM)<=3000]) #Table 7
-FALSE TRUE
-FALSE  2928    3
-TRUE      0   69
+#     FALSE TRUE
+#FALSE  2928    3
+#TRUE      0   69
 
 #second data set 
 #download two files from GSD16441 to the current directory
